@@ -19,6 +19,10 @@ const insertionsort = (data) => {
 
 const dados = insertionsort(PESSOAS)
 
-for (let i = 0; i < dados.length; i++)
-  console.log(`[${i + 1}] -CPF: ${dados[i].cpf}, Nome: ${dados[i].nome}`)
-
+var acesso = [];
+for (let i = 0; i < dados.length; i++){
+  acesso[i] = Math.floor(Math.random() * 100)
+  console.log(`Acessos: ${acesso[i]}, [${i + 1}] -CPF: ${dados[i].cpf}, Nome: ${dados[i].nome}`)
+}
+//Testando a atribuição de acessos para cada pessoa
+ console.log(`Acessos: ${acesso[1]}, [${2}] -CPF: ${dados[1].cpf}, Nome: ${dados[1].nome}`)
