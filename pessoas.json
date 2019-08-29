@@ -1,4 +1,4 @@
-const PESSOAS =[
+[
 	{
 		"nome": "Sara Hadassa Figueiredo",
 		"idade": 39,
@@ -413,4 +413,3 @@ const PESSOAS =[
 
     	}
     ]
-module.exports = PESSOAS
