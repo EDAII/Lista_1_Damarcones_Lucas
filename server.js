@@ -1,24 +1,28 @@
-// const fs = require('fs');
-// let obj = await JSON.parse(fs.readFileSync('pessoas2.json', 'utf8'));
-let obj = require('./pessoas')
+const PESSOAS = require('./pessoas')
 
-// console.log(obj)
-function insertionSort(array) {
-  let length = array.length;
-   console.log("length: ",length)
-  
-  for(let i = 1, j; i < length; i++) {
-    let temp = array[i];
-    for(let j = i - 1; j >= 0 && array[j].cpf > temp.cpf; j--) {
-      array[j+1] = array[j];
+
+const insertionsort = (data) => {
+  let array = data
+  let i, j, aux, n = array.length;
+  for (i = 1; i < n; i++) {
+    j = i;
+    while ((j != 0) && (array[j].cpf < array[j - 1].cpf)) {
+      aux = array[j];
+      array[j] = array[j - 1];
+      array[j - 1] = aux;
+      j--;
     }
-    array[j+1] = temp;
+
   }
-  
   return array;
 }
 
-let vet = insertionSort(obj)
-for(let i = 0; i <vet.length ;i++)
-console.log(vet[i].cpf)
+const dados = insertionsort(PESSOAS)
 
+var acesso = [];
+for (let i = 0; i < dados.length; i++){
+  acesso[i] = Math.floor(Math.random() * 100)
+  console.log(`Acessos: ${acesso[i]}, [${i + 1}] -CPF: ${dados[i].cpf}, Nome: ${dados[i].nome}`)
+}
+//Testando a atribuição de acessos para cada pessoa
+ console.log(`Acessos: ${acesso[1]}, [${2}] -CPF: ${dados[1].cpf}, Nome: ${dados[1].nome}`)
