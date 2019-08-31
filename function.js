@@ -31,13 +31,20 @@ const indexsearch = (data, mod) => {
 }
 
 const menu = ()=>{
-
-    console.log("\t\tBem-vindo ao Cerrado Seguros");
-    console.log("1. Exibir clientes")
-    console.log("2. Cadastrar novo segurado")
-    console.log("3. Buscar segurado")
-    console.log("4. Remover segurado")
-    console.log("0. Sair")
+    let obj  = []
+    obj.push("Bem-vindo ao Cerrado Seguros");
+    obj.push("Exibir clientes")
+    obj.push("Cadastrar novo segurado")
+    obj.push("Buscar segurado")
+    obj.push("Remover segurado")
+    return obj
+}
+const exibirclientes =  (vet)=>
+{
+    for (let index = 0; index < vet.length; index++) {
+        console.log(`[${index +1 }] -CPF: ${vet[index].cpf}\tNome: ${vet[index].nome}`)
+        
+    }
 }
 
 const verifyindex = (index, info) => {
@@ -52,5 +59,5 @@ const fun = () => {
 
 
 module.exports = { indexsearch, insertionsort, fun,
-    menu
+    menu, exibirclientes
     }
