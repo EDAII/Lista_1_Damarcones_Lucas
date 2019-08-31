@@ -16,7 +16,6 @@ const insertionsort = (data) => {
 
 const indexsearch = (data, mod) => {
     const LEN = data.length
-    console.log(LEN)
     let index = 0, i = 0, vet = []
     for (index = 0, i = 0; index < LEN - 1; index += mod) {
         vet.push({
@@ -28,8 +27,17 @@ const indexsearch = (data, mod) => {
         i: LEN - 1,
         cpf: data[LEN - 1].cpf
     })
-    console.log(vet)
     return vet;
+}
+
+const menu = ()=>{
+
+    console.log("\t\tBem-vindo ao Cerrado Seguros");
+    console.log("1. Exibir clientes")
+    console.log("2. Cadastrar novo segurado")
+    console.log("3. Buscar segurado")
+    console.log("4. Remover segurado")
+    console.log("0. Sair")
 }
 
 const verifyindex = (index, info) => {
@@ -43,4 +51,6 @@ const fun = () => {
 }
 
 
-module.exports = { indexsearch, insertionsort, fun }
+module.exports = { indexsearch, insertionsort, fun,
+    menu
+    }
