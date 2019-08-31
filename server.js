@@ -1,8 +1,3 @@
-const PESSOAS = require('./pessoas')
-const {insertionsort, indexsearch, menu} = require('./function')
+const { nodemenu} = require('./nodemenu')
+nodemenu.start()
 
-
-menu()
-
-const dados = insertionsort(PESSOAS)
-vindex = indexsearch(dados, 10);
