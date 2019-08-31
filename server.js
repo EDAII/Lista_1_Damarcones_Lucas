@@ -1,4 +1,4 @@
 const { nodemenu} = require('./nodemenu')
 
-nodemenu
+nodemenu().start()
 
