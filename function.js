@@ -19,36 +19,49 @@ const indexsearch = (data, mod) => {
     let index = 0, i = 0, vet = []
     for (index = 0, i = 0; index < LEN - 1; index += mod) {
         vet.push({
-            i: index,
+            pos: index,
             cpf: data[index].cpf
         })
     }
     vet.push({
-        i: LEN - 1,
+        pos: LEN - 1,
         cpf: data[LEN - 1].cpf
     })
+    // console.log(vet)
     return vet;
 }
 
-const menu = ()=>{
-    let obj  = []
+const menu = () => {
+    let obj = []
     obj.push("Bem-vindo ao Cerrado Seguros");
     obj.push("Exibir clientes")
-    obj.push("Cadastrar novo segurado")
     obj.push("Buscar segurado")
+    obj.push("Cadastrar novo segurado")
     obj.push("Remover segurado")
     return obj
 }
-const exibirclientes =  (vet)=>
-{
+const exibirclientes = (vet) => {
     for (let index = 0; index < vet.length; index++) {
-        console.log(`[${index +1 }] -CPF: ${vet[index].cpf}\tNome: ${vet[index].nome}`)
-        
+        console.log(`[${index + 1}] - CPF: ${vet[index].cpf}`)
+
     }
 }
 
-const verifyindex = (index, info) => {
-
+const buscaindex = (index, vet, key) => {
+// console.log(index)
+// console.log(vet)
+// console.log(key)
+    for (let i = 0; i < index.length-1; i++) {
+        if(index[i].cpf >= key &&   key <= index[i + 1].cpf)
+        {
+            for (let j = index[i].pos; j < index[i + 1].pos; j++)
+                if (vet[j].cpf == key) {
+                    console.log(`NOME: ${vet[j].nome}, IDADE: ${vet[j].idade},CPF:${vet[j].cpf} , RG:${vet[j].rg}`)
+                    break
+                }
+        }
+        
+    }
 }
 const fun = () => {
     for (let i = 0; i < dados.length; i++) {
@@ -58,6 +71,8 @@ const fun = () => {
 }
 
 
-module.exports = { indexsearch, insertionsort, fun,
-    menu, exibirclientes
-    }
+module.exports = {
+    indexsearch, insertionsort, fun,
+    menu, exibirclientes,
+    buscaindex
+}

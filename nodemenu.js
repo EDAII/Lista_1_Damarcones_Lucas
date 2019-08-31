@@ -1,5 +1,5 @@
 const nodemenu = require('node-menu')
-const { insertionsort, indexsearch, menu , exibirclientes} = require('./function')
+const { insertionsort, indexsearch, menu , exibirclientes, buscaindex} = require('./function')
 const DADOS = require("./pessoas")
 const dados = insertionsort(DADOS)
 vindex = indexsearch(dados, 10);
@@ -23,11 +23,14 @@ const testMenu = new Menu()
 let opcoes = menu()
 
 nodemenu.addDelimiter('-', 60, opcoes[0])
-
-    nodemenu.addItem(
+nodemenu.addItem(
         opcoes[1],
         ()=>{
             exibirclientes(dados)
         })
-
+.addItem(
+            opcoes[2],
+            ()=>{
+                buscaindex(vindex,dados, "123.456.789-00")
+            })
 module.exports = {nodemenu}

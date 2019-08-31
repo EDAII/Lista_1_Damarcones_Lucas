@@ -394,7 +394,7 @@ const PESSOAS = [
 	{
 		"nome": "Lucas Lopes Pereira",
 		"idade": 23,
-		"cpf": "123.533.645-70",
+		"cpf": "123.456.789-00",
 		"rg": "19.628.690-9"
 	},
 	{
