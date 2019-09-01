@@ -7,7 +7,7 @@ Lucas Lopes Pereira 15/0137290
 
 
 ## Instalação
-npm install package.json
+npm install
 
 node server.js
 
@@ -15,5 +15,4 @@ node server.js
 #### Algoritmos usados
 Inserção: insertion sort
 
-Busca: busca sequencial com vetor indexado e sentinela
-
+Busca: busca binária iterativa
