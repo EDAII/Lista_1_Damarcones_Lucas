@@ -36,22 +36,23 @@ const menu = () => {
     obj.push("Bem-vindo ao Cerrado Seguros");
     obj.push("Exibir clientes")
     obj.push("Buscar segurado")
-    obj.push("Cadastrar novo segurado")
     obj.push("Remover segurado")
+    obj.push("Cadastrar novo segurado")
+
     return obj
 }
 
-const customMenu = ()=>{
-    let menu= "\n"
-menu+=("    _____                         _       _____            \n")
-menu+=("    /  __ \                       | |     /  ___|          \n") 
-menu+=("    | /  \/ ___ _ __ _ __ __ _  __| | ___ \ `--.  ___  __ _\n") 
-menu+=("    | |    / _ \ '__| '__/ _` |/ _` |/ _ \ `--. \/ _ \/ _` \n|")
-menu+=("    | \__/\  __/ |  | | | (_| | (_| | (_) /\__/ /  __/ (_| \n|")
-menu+=("     \____/\___|_|  |_|  \__,_|\__,_|\___/\____/ \___|\__, \n|")
-menu+=("                                                       __/ \n|")
-menu+=("                                                      |___/\n") 
-return menu
+const customMenu = () => {
+    let menu = "\n"
+    menu += ("    _____                         _       _____            \n")
+    menu += ("    /  __ \                       | |     /  ___|          \n")
+    menu += ("    | /  \/ ___ _ __ _ __ __ _  __| | ___ \ `--.  ___  __ _\n")
+    menu += ("    | |    / _ \ '__| '__/ _` |/ _` |/ _ \ `--. \/ _ \/ _` \n|")
+    menu += ("    | \__/\  __/ |  | | | (_| | (_| | (_) /\__/ /  __/ (_| \n|")
+    menu += ("     \____/\___|_|  |_|  \__,_|\__,_|\___/\____/ \___|\__, \n|")
+    menu += ("                                                       __/ \n|")
+    menu += ("                                                      |___/\n")
+    return menu
 }
 
 
@@ -85,6 +86,17 @@ const binsearch = function (arr, x) {
 
 }
 
+const deletebycpf = (dados, cpf) => {
+    let pos = binsearch(dados, cpf);
+    if (pos === -1)
+        return -1
+    else {
+        delete dados[pos]
+        dados[pos] = { cpf: "" }
+        return 1
+    }
+}
+
 const buscaindex = (index, vet, key) => {
     // console.log(index)
     // console.log(vet)
@@ -111,5 +123,6 @@ const fun = () => {
 module.exports = {
     indexsearch, insertionsort, fun,
     menu, exibirclientes,
-    customMenu, binsearch
+    customMenu, binsearch,
+    deletebycpf
 }

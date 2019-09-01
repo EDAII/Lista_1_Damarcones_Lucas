@@ -1,5 +1,5 @@
 const nodemenu = require('node-menu')
-const { insertionsort, menu, exibirclientes, binsearch } = require('./function')
+const {deletebycpf, insertionsort, menu, exibirclientes, binsearch } = require('./function')
 const DB = require("./pessoas")
 let dados = insertionsort(DB)
 
@@ -20,6 +20,16 @@ nodemenu.addItem(
                 console.log(dados[res])
         }, null,
         [{ 'name': 'cpf', 'type': 'string' }])
+        .addItem(
+            opcoes[3],
+            (cpf) => {
+                let res = deletebycpf(dados,cpf)
+                if(res !== -1)
+                    console.log("Usuário deletado")
+                else
+                    console.log("Operação não realizada")
+            }, null,
+            [{ 'name': 'cpf', 'type': 'string' }])
     .start()
 
 
