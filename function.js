@@ -35,7 +35,7 @@ const menu = () => {
     let obj = []
     obj.push("Bem-vindo ao Cerrado Seguros");
     obj.push("Exibir clientes")
-    obj.push("Buscar segurado por CPF")
+    obj.push("Buscar segurado")
     obj.push("Cadastrar novo segurado")
     obj.push("Remover segurado")
     return obj
