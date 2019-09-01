@@ -1,5 +1,5 @@
 const nodemenu = require('node-menu')
-const { insertionsort, indexsearch, menu , exibirclientes, buscaindex} = require('./function')
+const { insertionsort, indexsearch, menu , exibirclientes, binsearch} = require('./function')
 const DADOS = require("./pessoas")
 const dados = insertionsort(DADOS)
 vindex = indexsearch(dados, 10);
@@ -31,6 +31,9 @@ nodemenu.addItem(
 .addItem(
             opcoes[2],
             ()=>{
-                buscaindex(vindex,dados, "123.456.789-00")
+                let res = binsearch(dados, 0, dados.length,"123.456.789-00")
+                console.log("Res binsearch: ",res )
             })
+            // .start()
+
 module.exports = {nodemenu}
