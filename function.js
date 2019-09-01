@@ -40,6 +40,21 @@ const menu = () => {
     obj.push("Remover segurado")
     return obj
 }
+
+const customMenu = ()=>{
+    let menu= "\n"
+menu+=("    _____                         _       _____            \n")
+menu+=("    /  __ \                       | |     /  ___|          \n") 
+menu+=("    | /  \/ ___ _ __ _ __ __ _  __| | ___ \ `--.  ___  __ _\n") 
+menu+=("    | |    / _ \ '__| '__/ _` |/ _` |/ _ \ `--. \/ _ \/ _` \n|")
+menu+=("    | \__/\  __/ |  | | | (_| | (_| | (_) /\__/ /  __/ (_| \n|")
+menu+=("     \____/\___|_|  |_|  \__,_|\__,_|\___/\____/ \___|\__, \n|")
+menu+=("                                                       __/ \n|")
+menu+=("                                                      |___/\n") 
+return menu
+}
+
+
 const exibirclientes = (vet) => {
     for (let index = 0; index < vet.length; index++) {
         console.log(`[${index + 1}] - CPF: ${vet[index].cpf}`)
@@ -96,5 +111,5 @@ const fun = () => {
 module.exports = {
     indexsearch, insertionsort, fun,
     menu, exibirclientes,
-    buscaindex, binsearch
+    customMenu, binsearch
 }
