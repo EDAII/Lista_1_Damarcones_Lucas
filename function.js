@@ -54,6 +54,8 @@ const buscaindex = (index, vet, key) => {
     for (let i = 0; i < index.length-1; i++) {
         if(index[i].cpf >= key &&   key <= index[i + 1].cpf)
         {
+            console.log(index[i].pos)
+            console.log(index[i+1].pos)
             for (let j = index[i].pos; j < index[i + 1].pos; j++)
                 if (vet[j].cpf == key) {
                     console.log(`NOME: ${vet[j].nome}, IDADE: ${vet[j].idade},CPF:${vet[j].cpf} , RG:${vet[j].rg}`)
