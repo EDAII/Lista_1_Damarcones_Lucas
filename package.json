@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/EDAII/Lista_1_Damarcones_Lucas#readme",
   "dependencies": {
+    "node": "^12.9.1",
     "node-menu": "^1.3.0"
   }
 }
