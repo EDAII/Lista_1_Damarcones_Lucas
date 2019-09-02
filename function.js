@@ -31,7 +31,6 @@ const indexsearch = (data, mod) => {
         pos: LEN - 1,
         cpf: data[LEN - 1].cpf
     })
-    // console.log(vet)
     return vet;
 }
 
@@ -45,21 +44,6 @@ const menu = () => {
 
     return obj
 }
-
-const customMenu = () => {
-    let menu = "\n"
-    menu += ("    _____                         _       _____            \n")
-    menu += ("    /  __ \                       | |     /  ___|          \n")
-    menu += ("    | /  \/ ___ _ __ _ __ __ _  __| | ___ \ `--.  ___  __ _\n")
-    menu += ("    | |    / _ \ '__| '__/ _` |/ _` |/ _ \ `--. \/ _ \/ _` \n|")
-    menu += ("    | \__/\  __/ |  | | | (_| | (_| | (_) /\__/ /  __/ (_| \n|")
-    menu += ("     \____/\___|_|  |_|  \__,_|\__,_|\___/\____/ \___|\__, \n|")
-    menu += ("                                                       __/ \n|")
-    menu += ("                                                      |___/\n")
-    return menu
-}
-
-
 const exibirclientes = (vet) => {
     for (let index = 0; index < vet.length; index++) {
         console.log(`[${index + 1}] - CPF: ${vet[index].cpf}`)
@@ -69,17 +53,9 @@ const exibirclientes = (vet) => {
 const binsearch = function (arr, x) {
 
     let start = 0, end = arr.length - 1;
-
-    // Iterate while start not meets end 
     while (start <= end) {
-
-        // Find the mid index 
         let mid = Math.floor((start + end) / 2);
-
-        // If element is present at mid, return True 
         if (arr[mid].cpf == x) return mid;
-
-        // Else look in left or right half accordingly 
         else if (arr[mid].cpf < x)
             start = mid + 1;
         else
@@ -88,6 +64,15 @@ const binsearch = function (arr, x) {
 
     return -1;
 
+}
+
+const rmnull = (data)=>{
+    let newdata = []
+        for(let i = 0; i< data.length ;i++){
+            if(data[i].cpf !== "")
+                newdata.push(data[i])
+        }
+        return newdata
 }
 
 const deletebycpf = (dados, cpf) => {
@@ -101,21 +86,6 @@ const deletebycpf = (dados, cpf) => {
     }
 }
 
-const buscaindex = (index, vet, key) => {
-    // console.log(index)
-    // console.log(vet)
-    // console.log(key)
-    for (let i = 0; i < index.length - 1; i++) {
-        if (index[i].cpf >= key && key <= index[i + 1].cpf) {
-            for (let j = index[i].pos; j < index[i + 1].pos; j++)
-                if (vet[j].cpf == key) {
-                    console.log(`NOME: ${vet[j].nome}, IDADE: ${vet[j].idade},CPF:${vet[j].cpf} , RG:${vet[j].rg}`)
-                    break
-                }
-        }
-
-    }
-}
 const fun = () => {
     for (let i = 0; i < dados.length; i++) {
         acesso[i] = Math.floor(Math.random() * 100)
@@ -127,5 +97,5 @@ const fun = () => {
 module.exports = {
     indexsearch, insertionsort, fun,
     menu, exibirclientes, binsearch,
-    deletebycpf, addend
+    deletebycpf, addend,rmnull
 }
