@@ -13,6 +13,10 @@ const insertionsort = (data) => {
     }
     return array;
 }
+const addend = (data, info) => {
+    data.push(info)
+    return insertionsort(data)
+}
 
 const indexsearch = (data, mod) => {
     const LEN = data.length
@@ -122,7 +126,6 @@ const fun = () => {
 
 module.exports = {
     indexsearch, insertionsort, fun,
-    menu, exibirclientes,
-    customMenu, binsearch,
-    deletebycpf
+    menu, exibirclientes, binsearch,
+    deletebycpf, addend
 }
