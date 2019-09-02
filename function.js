@@ -86,16 +86,9 @@ const deletebycpf = (dados, cpf) => {
     }
 }
 
-const fun = () => {
-    for (let i = 0; i < dados.length; i++) {
-        acesso[i] = Math.floor(Math.random() * 100)
-        console.log(`Acessos: ${acesso[i]}, [${i + 1}] -CPF: ${dados[i].cpf}, Nome: ${dados[i].nome}`)
-    }
-}
-
 
 module.exports = {
-    indexsearch, insertionsort, fun,
+    indexsearch, insertionsort,
     menu, exibirclientes, binsearch,
     deletebycpf, addend,rmnull
 }
