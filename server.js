@@ -1,5 +1,5 @@
 let nodemenu = require('node-menu')
-const { rmnull,addend, deletebycpf, insertionsort, menu, exibirclientes, binsearch } = require('./function')
+const { rmnull,addend, deletebycpf, insertionsort, menu, exibirclientes, binarysearch } = require('./function')
 const DB = require("./pessoas")
 let dados = insertionsort(DB)
 
@@ -14,7 +14,7 @@ nodemenu.addItem(
     .addItem(
         opcoes[2],
         (cpf) => {
-            let res = binsearch(dados, cpf)
+            let res = binarysearch(dados, cpf)
             if (res === -1)
                 console.log("Usuário não encontrada")
             else
@@ -37,7 +37,7 @@ nodemenu.addItem(
     .addItem(
         opcoes[4],
         (_cpf, _nome, _rg, _idade) => {
-            let res = binsearch(dados, _cpf)
+            let res = binarysearch(dados, _cpf)
             if (res !== -1) {
                 console.log("Dados Atualizados.")
                 dados[res].nome = _nome
@@ -58,6 +58,7 @@ nodemenu.addItem(
         }, null,
         [{ 'name': '_cpf', 'type': 'string' }, { 'name': '_nome', 'type': 'string' },
         { 'name': '_rg', 'type': 'string' }, { 'name': '_idade', 'type': 'numeric' }])
+    .disableDefaultPrompt()
     .start()
 
 

@@ -50,7 +50,7 @@ const exibirclientes = (vet) => {
 
     }
 }
-const binsearch = function (arr, x) {
+const binarysearch = function (arr, x) {
 
     let start = 0, end = arr.length - 1;
     while (start <= end) {
@@ -65,18 +65,26 @@ const binsearch = function (arr, x) {
     return -1;
 
 }
+const seqsentinelasearch = function (arr, x) {
+    const len = arr.length
+    arr[len].cpf = "999.999.999-99"
+    let i 
+    for ( i = 0; x != arr[len].cpf; i++);
+    if(i <= len ) return i
+    return -1
 
-const rmnull = (data)=>{
+}
+const rmnull = (data) => {
     let newdata = []
-        for(let i = 0; i< data.length ;i++){
-            if(data[i].cpf !== "")
-                newdata.push(data[i])
-        }
-        return newdata
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].cpf !== "")
+            newdata.push(data[i])
+    }
+    return newdata
 }
 
 const deletebycpf = (dados, cpf) => {
-    let pos = binsearch(dados, cpf);
+    let pos = binarysearch(dados, cpf);
     if (pos === -1)
         return -1
     else {
@@ -89,6 +97,7 @@ const deletebycpf = (dados, cpf) => {
 
 module.exports = {
     indexsearch, insertionsort,
-    menu, exibirclientes, binsearch,
-    deletebycpf, addend,rmnull
+    menu, exibirclientes, binarysearch,
+    deletebycpf, addend, rmnull,
+    seqsentinelasearch
 }
